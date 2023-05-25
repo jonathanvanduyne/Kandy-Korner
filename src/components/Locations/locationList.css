@@ -1,0 +1,11 @@
+.locations {
+    display: flex;
+    flex-direction: row
+}
+
+.location {
+    background-color: lightblue;
+    border: 3px solid red;
+    padding: 5px;
+    margin: 5px;
+}
