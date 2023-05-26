@@ -1,0 +1,29 @@
+.products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.product {
+    background-color: lightblue;
+    border: 3px solid red;
+    padding: 5px;
+    margin: 5px;
+}
+
+label {
+    background-color: lightblue;
+    border: 3px solid red;
+    padding: 5px;
+    margin: 10px;
+    margin-bottom: 5px;
+}
+
+.form-group label {
+    margin-bottom: 20px; /* Adds space below the label */
+  }
+  
+  .form-group input {
+    margin-top: 20px; /* Adds space above the input */
+  }
+  

@@ -2,21 +2,15 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export const ProductForm = () => {
-    /*
-        TODO: Add the correct default properties to the
-        initial state object
-    */
+
     const [product, update] = useState(
         {
-            name: null,
-            productTypeId: null,
-            price: null
-    }
+            name: "",
+            productTypeId: "",
+            price: 0,
+        }
     )
-    /*
-        TODO: Use the useNavigation() hook so you can redirect
-        the user to the product list
-    */
+
     const navigate = useNavigate()
 
     const localKandyUser = localStorage.getItem("kandy_user")
@@ -26,15 +20,15 @@ export const ProductForm = () => {
         event.preventDefault()
 
         const productToSendToAPI = {
-            name: null,
-            productTypeId: null,
-            price: null
+            name: product.name,
+            productTypeId: product.productTypeId,
+            price: product.price,
         }
-        // TODO: Perform the fetch() to POST the object to the API
+
         return fetch("http://localhost:8088/products", {
             method: "POST",
             headers: {
-                "Content-Type": "application.json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(productToSendToAPI)
         })
@@ -46,6 +40,7 @@ export const ProductForm = () => {
     return (
         <form className="productForm">
             <h2 className="productForm__title">Add New Product</h2>
+
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="name">Name:</label>
@@ -64,16 +59,39 @@ export const ProductForm = () => {
                         } />
                 </div>
             </fieldset>
-{/* Pick up after this line */}
+
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Emergency:</label>
-                    <input type="checkbox"
-                        value={product.emergency}
+                    <label htmlFor="productType">Product Type:</label>
+                    <select
+                        className="form-group"
+                        value={product.productTypeId}
                         onChange={
                             (evt) => {
                                 const copy = { ...product }
-                                copy.emergency = evt.target.checked
+                                copy.productTypeId = evt.target.value
+                                update(copy)
+                            }
+                        }>
+                        <option value="">Select a Product Type</option>
+                        <option value="1">Sour Screamers</option>
+                        <option value="2">Gummy Gushers</option>
+                        <option value="3">Chocolate Chompers</option>
+                        <option value="4">Fruity Frizzles</option>
+                        <option value="5">Jelly Jammers</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="price">Price:</label>
+                    <input type="number"
+                        value={product.price}
+                        onChange={
+                            (evt) => {
+                                const copy = { ...product }
+                                copy.price = evt.target.value
                                 update(copy)
                             }
                         } />

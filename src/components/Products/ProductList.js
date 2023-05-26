@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import "./ProductList.css"
+import "./Products.css"
+import { useNavigate } from "react-router-dom"
 
 export const ProductList = () => {
     const [products, setProducts] = useState([])
@@ -7,6 +8,7 @@ export const ProductList = () => {
 
     const localKandyUser = localStorage.getItem("kandy_user")
     const kandyUserObject = JSON.parse(localKandyUser)
+    const navigate = useNavigate()
 
     useEffect(
         () => {
@@ -31,12 +33,18 @@ export const ProductList = () => {
         [price]
     )
 
+    const handleAddProductClick = () => {
+        navigate("./ProductForm")
+    }
+
 
     if (kandyUserObject.staff === true)
         return <>
             <h2> List of Products</h2>
+            
             <button onClick={() => { filterPrice(true) }}>Top Priced</button>
-
+            <button onClick={handleAddProductClick}>Add New Product</button>
+            
             <article className="products">
                 {
                     products.map(
@@ -50,6 +58,8 @@ export const ProductList = () => {
                         }
                     )
                 }
+
+
             </article>
         </>
 
