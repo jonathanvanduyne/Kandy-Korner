@@ -38,32 +38,26 @@ export const ProductList = () => {
     }
 
 
-    if (kandyUserObject.staff === true)
-        return <>
-            <h2> List of Products</h2>
-            
-            <button onClick={() => { filterPrice(true) }}>Top Priced</button>
-            <button onClick={handleAddProductClick}>Add New Product</button>
-            
+
+    return (
+        <>
+            <h2>List of Products</h2>
+            <button onClick={() => filterPrice(true)}>Top Priced</button>
+
+            {kandyUserObject.staff === true && (
+                <button onClick={handleAddProductClick}>Add New Product</button>
+            )}
+
             <article className="products">
-                {
-                    products.map(
-                        (product) => {
-                            return <section className="product" key={`product--${product.id}`}>
-                                <header>--Product #{product.id}--</header>
-                                <p>Name:{product.name}</p>
-                                <p>Price:${product.price}</p>
-                                <p>Type:{product.productType.category}</p>
-                            </section>
-                        }
-                    )
-                }
-
-
+                {products.map((product) => (
+                    <section className="product" key={`product--${product.id}`}>
+                        <header>--Product #{product.id}--</header>
+                        <p>Name: {product.name}</p>
+                        <p>Price: ${product.price}</p>
+                        <p>Type: {product.productType.category}</p>
+                    </section>
+                ))}
             </article>
         </>
-
-    else return <>
-        null
-    </>
-}
+    )
+                }
