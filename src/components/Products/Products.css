@@ -20,10 +20,11 @@ label {
 }
 
 .form-group label {
-    margin-bottom: 20px; /* Adds space below the label */
-  }
-  
-  .form-group input {
-    margin-top: 20px; /* Adds space above the input */
-  }
-  
+    margin-bottom: 20px;
+    /* Adds space below the label */
+}
+
+.form-group input {
+    margin-top: 20px;
+    /* Adds space above the input */
+}
