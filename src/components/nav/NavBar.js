@@ -8,7 +8,7 @@ export const NavBar = () => {
         const kandyUserObject = JSON.parse(localKandyUser)
     
     
-        if (kandyUserObject.isStaff) {
+        if (kandyUserObject.staff) {
             return <EmployeeNavBar />
         }
         else {

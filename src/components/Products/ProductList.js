@@ -60,7 +60,6 @@ export const ProductList = ({searchTermState}) => {
         <>
             {kandyUserObject.staff ? (
                 <>
-                    <h2>List of Products</h2>
                     <button onClick={() => filterPrice(true)}>Top Priced</button>
                     <button onClick={handleAddProductClick}>Add New Product</button>
 

@@ -1,0 +1,23 @@
+.employees {
+    display: flex;
+    flex-direction: row
+}
+
+.employee {
+    background-color: lightblue;
+    border: 3px solid red;
+    padding: 5px;
+    margin: 5px;
+}
+
+header {
+    text-shadow: 5px black;
+    background-color: white;
+}
+
+h2 {
+    display: flex;
+    width: fit-content;
+    background-color: white;
+    border: 3px solid palegreen
+}

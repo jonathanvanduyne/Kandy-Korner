@@ -7,7 +7,7 @@ export const ApplicationViews = () => {
 	const kandyUserObject = JSON.parse(localKandyUser)
 
 
-	if (kandyUserObject.isStaff) {
+	if (kandyUserObject.staff) {
 		return <EmployeeViews />
 	}
 	else {

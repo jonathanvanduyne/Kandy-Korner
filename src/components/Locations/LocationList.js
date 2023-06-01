@@ -24,8 +24,8 @@ export const LocationList = () => {
                 (location) => {
                     return <section className="location" key={`location--${location.id}`}>
                         <header>--Location #{location.id}--</header>
-                        <p>Address:{location.address}</p>
-                        <p>Square Footage:{location.sqFootage}</p>
+                        <p>Address: {location.address}</p>
+                        <p>Square Footage: {location.sqFootage}</p>
                     </section>
                 }
             )
