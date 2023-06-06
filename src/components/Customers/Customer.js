@@ -7,5 +7,6 @@ export const Customer = ({ id, name, email, loyaltyNumber }) => {
         </div>
         <div>Email: {email}</div>
         <div>Loyalty Number: {loyaltyNumber}</div>
+        
     </section>
 }

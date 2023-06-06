@@ -69,7 +69,7 @@ export const ProductForm = () => {
                         onChange={
                             (evt) => {
                                 const copy = { ...product }
-                                copy.productTypeId = evt.target.value
+                                copy.productTypeId = parseFloat(evt.target.value) 
                                 update(copy)
                             }
                         }>
@@ -91,7 +91,7 @@ export const ProductForm = () => {
                         onChange={
                             (evt) => {
                                 const copy = { ...product }
-                                copy.price = evt.target.value
+                                copy.price = parseFloat(evt.target.value)
                                 update(copy)
                             }
                         } />

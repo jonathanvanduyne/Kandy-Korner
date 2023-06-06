@@ -22,3 +22,29 @@ h2 {
     background-color: white;
     border: 3px solid palegreen
 }
+
+.customer {
+    /* Your existing styles for the customer section */
+
+    /* Add flex styles */
+    display: flex;
+    flex-direction: column;
+}
+
+.loyalty-info {
+    /* Add flex styles */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.update-loyalty-button {
+    /* Add styles for the update button */
+    /* Example styles */
+    padding: 1px 3px;
+    background-color: #007bff;
+    border: 3px solid palegreen;
+    color: #fff;
+    font-weight: 900;
+}

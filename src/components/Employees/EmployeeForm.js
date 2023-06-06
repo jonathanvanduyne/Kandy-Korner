@@ -98,7 +98,7 @@ export const EmployeeForm = () => {
                         onChange={
                             (evt) => {
                                 const copy = { ...employee }
-                                copy.locationId = evt.target.value
+                                copy.locationId = parseFloat(evt.target.value)
                                 updateEmployee(copy)
                             }
                         }>
@@ -135,7 +135,7 @@ export const EmployeeForm = () => {
                         onChange={
                             (evt) => {
                                 const copy = { ...employee }
-                                copy.payRate = evt.target.value
+                                copy.payRate = parseFloat(evt.target.value)
                                 updateEmployee(copy)
                             }
                         } />

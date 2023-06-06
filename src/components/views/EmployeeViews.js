@@ -6,6 +6,7 @@ import { EmployeeList } from "../Employees/EmployeeList.js"
 import { EmployeeForm } from "../Employees/EmployeeForm.js"
 import { CustomerList } from "../Customers/CustomerList.js"
 import { CustomerDetails } from "../Customers/CustomerDetails.js"
+import { UpdateLoyaltyNumber } from "../Customers/LoyaltyChange.js"
 
 export const EmployeeViews = () => {
 	return (
@@ -32,10 +33,8 @@ export const EmployeeViews = () => {
 			<Route path="customers" element={<CustomerList />} />
 			
 			<Route path="customers/:customerId" element={<CustomerDetails />} />
-
-
-
-
+			
+			<Route path="customers/:customerId/updateLoyaltyNumber" element={<UpdateLoyaltyNumber />} />
 
 		</Routes>
 	)

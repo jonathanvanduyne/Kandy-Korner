@@ -18,7 +18,7 @@ export const CustomerList = () => {
 
     return (
         <>
-            <h2>List of customers</h2>
+            <h2>List of Customers</h2>
 
             <article className="customers">
                 {customers.map((customer) => (
