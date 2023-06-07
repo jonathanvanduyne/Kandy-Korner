@@ -34,8 +34,7 @@ export const Login = () => {
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1>Kandy Korner</h1>
                     <h2>Please sign in</h2>
-                    <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
+                    <fieldset className="fix-this">
                         <input type="email"
                             value={email}
                             onChange={evt => set(evt.target.value)}

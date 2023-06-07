@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import "./Products.css"
 import { useNavigate } from "react-router-dom"
+import { PurchaseCandy } from "./PurchaseCandy.js"
 
-export const ProductList = ({searchTermState}) => {
+export const ProductList = ({ searchTermState }) => {
     const [products, setProducts] = useState([])
     const [price, filterPrice] = useState(false)
     const [searchedProducts, filterSearch] = useState([])
@@ -85,6 +86,9 @@ export const ProductList = ({searchTermState}) => {
                                 <p>Name: {product.name}</p>
                                 <p>Price: ${product.price}</p>
                                 <p>Type: {product.productType.category}</p>
+                                <footer>
+                                    <PurchaseCandy kandyUserObject={kandyUserObject} product={product} />
+                                </footer>
                             </section>
                         ))}
                     </article>
