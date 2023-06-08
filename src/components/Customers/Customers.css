@@ -48,3 +48,12 @@ h2 {
     color: #fff;
     font-weight: 900;
 }
+
+.purchase_item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: lightblue;
+    border: 3px solid red;
+    margin: 5px;
+}

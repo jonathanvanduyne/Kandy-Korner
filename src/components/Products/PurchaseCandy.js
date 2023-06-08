@@ -54,6 +54,10 @@ export const PurchaseCandy = ({ kandyUserObject, product }) => {
         updatePurchase(copy);
     };
 
+    const runProductObjectCreation = () => {
+        ProductObjectCreation(product, kandyUserObject)
+        window.alert("Candy Purchased!")
+    }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     const PostPurchase = (purchase) => {
@@ -78,7 +82,7 @@ export const PurchaseCandy = ({ kandyUserObject, product }) => {
 
     const PurchaseButtonClick = (product) => {
         if (locationInventories.find(locationInventory => locationInventory?.productId === product?.id)) {
-            return <button onClick={() => ProductObjectCreation(product, kandyUserObject)}>Purchase</button>
+            return <button onClick={() => runProductObjectCreation()} >Purchase</button>
         } else {
             return "Out of Stock";
         }
